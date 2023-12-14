@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Multiple YouTube Videos</title>
+</head>
+
+<body>
+  <nav class="sticky-nav">
+    <div class="nav-1">
+      <a class="navbar-brand" href="index.html"><img src="assets/com_shoulder_logo.png" alt="MagikEye" /></a>
+    </div>
+  </nav>
+
+  <div class="v-content">
+    <div class="video-thumbnails">
+      <a href="#" id="videoLink1" class="des-content">
+        <img src="#" id="thumbnailImage1" alt="Video 1">
+        <video width="320" height="240" controls poster="thumbnailImage1">
+            <source src="videoLink1" type="video/mp4">
+          </video>
+          <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum, sit?</span>
+      </a>
+      <a href="#" id="videoLink2">
+        <img src="#" id="thumbnailImage2" alt="Video 2">
+      </a>
+      <a href="#" id="videoLink3">
+        <img src="#" id="thumbnailImage3" alt="Video 3">
+      </a>
+      <a href="#" id="videoLink4">
+        <img src="#" id="thumbnailImage4" alt="Video 4">
+      </a>
+      <a href="#" id="videoLink5">
+        <img src="#" id="thumbnailImage5" alt="Video 5">
+      </a>
+      <a href="#" id="videoLink6">
+        <img src="#" id="thumbnailImage6" alt="Video 6">
+      </a>
+    </div>
+  </div>
+
+ 
+  
+  <script>
+    
+    const videoIds = ['YqNriFGR9xE', 'GfqzZXr3zlQ', 'K_UjWzs7A2M', 'XVBankvpOuM', 'EndD8TA2c30', 'yKl5ALe2UKQ'];
+    // You can dynamically set or fetch the video IDs here
+
+    // Loop through each anchor and image element to set attributes
+    for (let i = 0; i < videoIds.length; i++) {
+      const videoId = videoIds[i];
+      const videoLink = document.getElementById(`videoLink${i + 1}`);
+      const thumbnailImage = document.getElementById(`thumbnailImage${i + 1}`);
+      
+      videoLink.href = `video.html?videoId=${videoId}`;
+      thumbnailImage.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+    }
+  </script>
+   <footer>
+    <p>Copyright © 2022 MagikEye Inc. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

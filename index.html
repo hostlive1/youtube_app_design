@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Multiple YouTube Videos</title>
+</head>
+<body>
+  <!-- Top Navbar  -->
+  <nav class="sticky-nav">
+    <div class="nav-1">
+      <a class="navbar-brand" href="index.html"><img src="assets/com_shoulder_logo.png" alt="MagikEye" /></a>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <div class="v-content">
+    <div class="video-thumbnails">
+      <a href="#" id="videoLink1" class="des-content">
+        <div class="video-container">
+            <img src="#" id="thumbnailImage1" alt="Video 1">
+        </div>
+        <span><p>Proof of 600 FPS by ILT</p></span>
+        <p class="des">ILT can capture physical motion in ultra <br> high  speed. MagikEye have  achieved...</p>
+      </a>
+      <a href="#" id="videoLink2">
+        <div class="video-container">
+          <img src="#" id="thumbnailImage2" alt="Video 2">
+        </div>
+        <span><p>Magik Eye Demonstration...</p></span>
+        <p class="des">Takeo Miyazawa, CEO and Founder of Magik<br> Eye,  demonstrates the company's latest...</p>
+      </a>
+      <a href="#" id="videoLink3">
+        <div class="video-container">
+          <img src="#" id="thumbnailImage3" alt="Video 3">
+        </div>
+        <span><p>20200624 UF1 940 contrast</p></span>
+        <p class="des">Demonstrates the company's latest embedded<br>  vision technologies and products....</p>
+      </a>
+      <a href="#" id="videoLink4">
+        <div class="video-container">
+          <img src="#" id="thumbnailImage4" alt="Video 4">
+        </div>
+        <span><p>20200624 UF1 850 contrast</p></span>
+        <p class="des">Demonstrates the company's latest embedded<br>  vision technologies and products....</p>
+      </a>
+      <a href="#" id="videoLink5">
+        <div class="video-container">
+          <img src="#" id="thumbnailImage5" alt="Video 5">
+        </div>
+        <span><p>[MagikEye DK-ILT001 Prom...</p></span>
+        <p class="des">MagikEye Inc is developing new depth<br> sensing technology which is...</p>
+      </a>
+      <a href="#" id="videoLink6">
+        <div class="video-container">
+          <img src="#" id="thumbnailImage6" alt="Video 6">
+        </div>
+        <span><p>Magik Eye Demonstration of...</p></span>
+        <p class="des">Takeo Miyazawa, CEO and Founder<br> of  Magik Eye, demonstrates the...</p>
+      </a>
+      <a href="#" id="videoLink7">
+        <div class="video-container">
+          <img src="#" id="thumbnailImage7" alt="Video 7">
+        </div>
+        <span><p>Magik Eye's Takeo Miyazawa...</p></span>
+        <p class="des">Takeo Miyazawa, Founder and CEO of Magik<br> Eye,  presents the 'Game Changing...</p>
+      </a>
+      <a href="#" id="videoLink8">
+        <div class="video-container">
+          <img src="#" id="thumbnailImage8" alt="Video 8">
+        </div>
+        <span><p>Magik Eye Demonstration of...</p></span>
+        <p class="des">Takeo Miyazawa, CEO and Founder of Magik<br> Eye,  demonstrates the company's latest ...</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Copyright © 2023 MagikEye Inc. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Scripts for Video Player and Thumbnails -->
+  <script>
+    const videoIds = ['YqNriFGR9xE', 'GfqzZXr3zlQ', 'K_UjWzs7A2M', 'XVBankvpOuM', 'EndD8TA2c30', 'yKl5ALe2UKQ', 'cHNWFAKYL1Y', 'UtQKFdNGDuo'];
+
+    // You can dynamically set or fetch the video IDs here
+    // Loop through each anchor and image element to set attributes
+    for (let i = 0; i < videoIds.length; i++) {
+      const videoId = videoIds[i];
+      const videoLink = document.getElementById(`videoLink${i + 1}`);
+      const thumbnailImage = document.getElementById(`thumbnailImage${i + 1}`);
+
+      videoLink.href = `video.html?videoId=${videoId}&i=${i}`;
+      thumbnailImage.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+    }
+  </script>
+</body>
+</html>

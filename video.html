@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Player</title>
+  <link rel="stylesheet" href="video.css">
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="video-controller.js"></script>
+</head>
+
+<body>
+  <!-- Top Navbar  -->
+  <nav class="sticky-nav">
+    <div class="nav-1">
+      <a class="navbar-brand" href="index.html"><img src="assets/com_shoulder_logo.png" alt="MagikEye" /></a>
+    </div>
+  </nav>
+
+  <!-- Video Container -->
+  <div class="content-container">
+    <div class="v-container">
+      <div id="videoPlayer" class="v-content"></div>
+      <div class="v-heading">
+        <p id="v-name"></p>
+      </div>
+    </div>
+    <div class="d-content">
+      <div class="v-des">
+        <h2>Description</h2> <br>
+        <p id="description"></p>
+      </div>
+      <div class="w-link">&#128279; Visit Our Website : <a href="https://magik-eye.com/">https://magik-eye.com/</a></div>
+    </div>
+  </div>
+
+  <!-- Footer  -->
+  <footer>
+    <p>Copyright © 2023 MagikEye Inc. All Rights Reserved.</p>
+  </footer>
+  
+  <script>
+    // JavaScript code to embed and control the video player
+    // Use the URL parameter (e.g., videoId) to fetch the video ID and embed the player
+    const urlParams = new URLSearchParams(window.location.search);
+    const videoId = urlParams.get('videoId');
+    const i = urlParams.get('i');
+
+    const nameList = [
+        "Proof of 600 FPS by ILT | Magik-Eye Experiments",
+        "Magik Eye Demonstration of the Simplest 3D Sensing Smartphone Solution",
+        "20200624 UF1 940 contrast re01 1",
+        "20200624 UF1 850 contrast re01 1",
+        "[MagikEye DK-ILT001 Promotion Video] Have fun with ILT001!",
+        "Magik Eye Demonstration of the Smallest, Fastest and Most Power-Efficient 3D Sensing Technology",
+        "Magik Eye's Takeo Miyazawa Discusses the Company's New Approach to Depth Sensing (Preview)",
+        "Magik Eye Demonstration of 3D Hemispheric Depth Sensing for Surveillance and Smart Security"
+        // Add more descriptions as needed
+    ];
+    var nameElement = document.getElementById('v-name');
+    nameElement.textContent = nameList[i];
+
+    const descriptionList = [
+        "ILT can capture physical motion in ultra high speed. MagikEye have achieved 600 FPS using a single, standard CMOS image sensor without any hardware accelerator.  Amazingly, it is in real time!",
+        "Takeo Miyazawa, CEO and Founder of Magik Eye, demonstrates the company's latest embedded vision technologies and products at the 2019 Embedded Vision Summit. Specifically, Miyazawa demonstrates 3D sensing on a smartphone that showcases how Invertible Light enables real-time gesture recognition. By enabling the lowest-end smartphone to transform into a 3D sensing mobile device, Invertible Light presents an illustrative example of the smallest, fastest and most power-efficient 3D sensing solution.",
+        "Description 3",
+        "Description 4",
+        "MagikEye Inc is developing new depth sensing technology which is named as 'Invertible Light(R) Technology'. This technology is different from any other existing ones. Low latency & Fastest FPS, High Accuracy, Most power efficient and simplest hardware design. MagikEye produces DK-ILT001 evaluation kit on 2021/Q3. This evaluation kit is designed for users who would like to try Invertible Light(r) technology quickly. https://www.magik-eye.com/,",
+        "Takeo Miyazawa, CEO and Founder of Magik Eye, demonstrates the company's latest embedded vision technologies and products at the 2019 Embedded Vision Summit. Specifically, Miyazawa provides an overview and demonstration of Invertible Light 3D sensing technology. By showcasing 200 FPS on a simple CMOS sensor and a small 3mm*3mm cube projector, Invertible Light enables the smallest, fastest and most power-efficient 3D sensing method.",
+        "Takeo Miyazawa, Founder and CEO of Magik Eye, presents the 'Game Changing Depth Sensing Technique Enables Simpler, More Flexible 3D Solutions' tutorial at the May 2019 Embedded Vision Summit. <br> Magik Eye is a global team of computer vision veterans that have developed a new method to determine depth from light directly without the need to measure time, find a complex pattern or perform complex computation. The Magik Eye technique dramatically reduces the power, compute and size of a depth-sensing module while enabling a wide range of FOV, point resolutions, material sensitivities and distances. This presentation discusses the new technique and shows working samples in action.",
+        "Takeo Miyazawa, CEO and Founder of Magik Eye, demonstrates the company's latest embedded vision technologies and products at the 2019 Embedded Vision Summit. Specifically, Miyazawa demonstrates the great advantage of Invertible Light for surveillance and smart security. A single 3D sensor by Magik Eye is shown to provide full 180-degree hemispheric field of view (FOV) depth sensing, as compared to multiple sensors that would otherwise be needed today. Miyazawa also shows how reflective surfaces and materials, which are extremely difficult for other 3D sensing methods, can also be seen with Invertible Light."
+        // Add more descriptions as needed
+    ];
+    var descriptionElement = document.getElementById('description');
+    descriptionElement.textContent = descriptionList[i];
+
+    // Create a YouTube Player instance and embed the video
+    let player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('videoPlayer', {
+        height: '720',
+        width: '1140',
+        videoId: videoId,
+        events: {
+          'onReady': onPlayerReady,
+          // Add other event handlers as needed
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      // You can add event listeners or additional logic here when the player is ready
+    }
+  </script>
+</body>
+</html>
+
