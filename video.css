@@ -80,7 +80,7 @@ h2{
     font-size: 24px;
 }
 
-@media (max-width:1000px){
+@media (max-width:600px){
     .content-container{
         display: block;
         width: 100%;
